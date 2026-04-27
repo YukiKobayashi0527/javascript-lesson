@@ -82,11 +82,15 @@ divide(10,2);
 console.log(calc);
 
 function remainder(x,y) {
-  const surplus = x % y;
-  console.log(x + 'を' + y + 'で割った余りは' + surplus + 'です。')
-};
+  return x % y;
+}
 
-remainder(5,3);
+const dividend = 5;
+const divisor = 3;
+
+const answer = remainder(dividend,divisor);
+console.log(dividend + 'を' + divisor + 'を割った余りは' + answer + 'です。'
+);
 
 
  //スコープ外から参照しようとしたためエラーになっている。
@@ -126,11 +130,9 @@ console.log(numbers);
 let mixed = [4, '2', 5, '8', '9', 0, 1];
 for (let n = 0; n < mixed.length; n++) {
   const contents = mixed[n];
-  if (typeof contents !== 'number') {
-    console.log('not number');
-  } else if (contents % 2 === 0) {
+  if (typeof contents === 'number' && contents % 2 === 0){
     console.log('even');
-  } else {
+  }else if(typeof contents === 'number' && contents % 2 === 1){
     console.log('odd');
-  }
+  } else{console.log('not number');}
 }
